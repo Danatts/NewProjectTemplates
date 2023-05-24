@@ -9,17 +9,17 @@ import Listr from 'listr';
 
 const copy = promisify(ncp);
 
-async function copyTemplateFiles(options){
-return copy(options.templateDirectory, options.targetDirectory, {
+async function copyTemplateFiles(options) {
+	return copy(options.templateDirectory, options.targetDirectory, {
 		clobber: false,
 	})
 }
 
-async function initGit(options){
+async function initGit(options) {
 	const result = await execa('git', ['init'], {
 		cwd: options.targetDirectory,
 	});
-	if (result.failed){
+	if (result.failed) {
 		return Promise.reject(new Error('Failed to initialize git'));
 	}
 	return;
@@ -42,7 +42,7 @@ export async function createProject(options) {
 	try {
 		await access(templateDir, fs.constants.R_OK);
 	} catch (err) {
-		console.error('%s Invalid template name', chalk.red.bold('ERROR'));
+		console.error(`${chalk.red.bold('ERROR')} Invalid template name`);
 		process.exit(1);
 	}
 
@@ -59,7 +59,8 @@ export async function createProject(options) {
 	])
 
 	await tasks.run();
-	console.log('%s Project ready', chalk.green.bold('DONE'));
+	console.log(`${chalk.green.bold('DONE')} Project ready.`);
+	console.log(`${chalk.yellow.bold('REMEMBER')} Install dependecies with your package manager.`)
 	return true;
 }
 
