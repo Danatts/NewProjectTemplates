@@ -4,6 +4,16 @@ import { access } from 'fs/promises';
 import ncp from 'ncp';
 import path from 'path';
 import { execa } from 'execa';
+import { promisify } from 'util';
+import Listr from 'listr';
+
+const copy = promisify(ncp);
+
+async function copyTemplateFiles(options){
+return copy(options.templateDirectory, options.targetDirectory, {
+		clobber: false,
+	})
+}
 
 async function initGit(options){
 	const result = await execa('git', ['init'], {
@@ -36,20 +46,19 @@ export async function createProject(options) {
 		process.exit(1);
 	}
 
-	console.log('Copy project files');
-	ncp(options.templateDirectory, options.targetDirectory, {
-		clobber: false,
-	}, (err) => {
-		if (err) {
-			console.error('%s Cannot copy files', chalk.red.bold('ERROR'));
-			process.exit(1);
+	const tasks = new Listr([
+		{
+			title: 'Copy project files',
+			task: () => copyTemplateFiles(options),
+		},
+		{
+			title: 'Initialize git',
+			task: () => initGit(options),
+			enabled: () => options.git,
 		}
-	});
+	])
 
-	if(options.git) {
-		initGit(options);
-	}
-
+	await tasks.run();
 	console.log('%s Project ready', chalk.green.bold('DONE'));
 	return true;
 }
