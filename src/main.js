@@ -35,14 +35,14 @@ export async function createProject(options) {
 	const templateDir = path.resolve(
 		new URL(currentFileUrl).pathname,
 		'../../templates/',
-		options.template.toLowerCase()
+		options.template
 	);
 	options.templateDirectory = templateDir;
 
 	try {
 		await access(templateDir, fs.constants.R_OK);
 	} catch (err) {
-		console.error(`${chalk.red.bold('ERROR')} Invalid template name`);
+		console.error(`${chalk.red.bold('ERROR')} Invalid template name.`);
 		process.exit(1);
 	}
 

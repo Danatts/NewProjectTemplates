@@ -10,7 +10,9 @@
 		"lint": "eslint . --fix"
 	},
 	"keywords": [
-		"cli"
+		"cli",
+		"bootstrap",
+		"templates"
 	],
 	"author": "Daniel Arteta",
 	"license": "ISC",

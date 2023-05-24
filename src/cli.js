@@ -1,43 +1,33 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
 import { createProject } from './main.js';
+import templatesDic from './templatesDic.js';
 
 function parseArgumentIntoOptions(rawArgs) {
 	const args = arg(
 		{
 			'--git': Boolean,
-			'--yes': Boolean,
 			'-g': '--git',
-			'-y': '--yes',
 		},
 		{
 			argv: rawArgs.slice(2),
 		}
 	);
 	return {
-		skipPrompts: args['--yes'] || false,
 		git: args['--git'] || false,
 		template: args._[0],
 	};
 }
 
 async function promptForMissingOptions(options) {
-	const defaultTemplate = 'JavaScript';
-	if (options.skipPrompts) {
-		return {
-			...options,
-			template: options.template || defaultTemplate,
-		};
-	}
-
 	const questions = [];
 	if (!options.template) {
 		questions.push({
 			type: 'list',
 			name: 'template',
 			message: 'Please choose which porject template to use',
-			choices: ['JavaScript', 'TypeScript'],
-			default: defaultTemplate,
+			choices: ['JavaScript', 'React + TS', 'TypeScript'],
+			default: 'JavaScript',
 		});
 	}
 
@@ -54,7 +44,7 @@ async function promptForMissingOptions(options) {
 
 	return {
 		...options,
-		template: options.template || answers.template,
+		template: options.template || templatesDic.get(answers.template) ,
 		git: options.git || answers.git,
 	};
 }
