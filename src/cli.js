@@ -26,7 +26,7 @@ async function promptForMissingOptions(options) {
 			type: 'list',
 			name: 'template',
 			message: 'Please choose which porject template to use',
-			choices: ['JavaScript', 'React + TS', 'TypeScript'],
+			choices: ['JavaScript Vanilla', 'React + TS', 'TypeScript Vanilla'],
 			default: 'JavaScript',
 		});
 	}
@@ -44,7 +44,7 @@ async function promptForMissingOptions(options) {
 
 	return {
 		...options,
-		template: options.template || templatesDic.get(answers.template) ,
+		template: options.template || templatesDic.get(answers.template),
 		git: options.git || answers.git,
 	};
 }
