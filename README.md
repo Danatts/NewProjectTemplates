@@ -9,6 +9,6 @@ made by [Domink Kundel](https://github.com/dkundel).
 
 | Template | Command | Stack |
 | - | - | - |
-| JavaScript Vanilla | `js` | JavaScript |
+| JavaScript Vanilla | `javascript` | JavaScript |
 | React + TS | `tsreact` | React + TypeScript + Vite + Sass + SVGr |
-| TypeScript Vanilla | `ts` | TypeScript |
+| TypeScript Vanilla | `typescript` | TypeScript |
