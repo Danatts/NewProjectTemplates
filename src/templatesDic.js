@@ -1,4 +1,4 @@
-const templatesDic = new Map()
+const templatesDic = new Map();
 
 templatesDic.set('JavaScript','javascript');
 templatesDic.set('React + TS','tsreact');
