@@ -1,0 +1,19 @@
+{
+	"name": "javascript",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"dev": "nodemon src/index.js",
+		"lint": "eslint src/ --fix"
+	},
+	"keywords": [],
+	"author": "Daniel Arteta",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.40.0",
+		"nodemon": "^2.0.21"
+	}
+}
