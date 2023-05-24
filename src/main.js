@@ -12,7 +12,7 @@ const copy = promisify(ncp);
 async function copyTemplateFiles(options) {
 	return copy(options.templateDirectory, options.targetDirectory, {
 		clobber: false,
-	})
+	});
 }
 
 async function initGit(options) {
@@ -56,11 +56,11 @@ export async function createProject(options) {
 			task: () => initGit(options),
 			enabled: () => options.git,
 		}
-	])
+	]);
 
 	await tasks.run();
 	console.log(`${chalk.green.bold('DONE')} Project ready.`);
-	console.log(`${chalk.yellow.bold('REMEMBER')} Install dependecies with your package manager.`)
+	console.log(`${chalk.yellow.bold('REMEMBER')} Install dependecies with your package manager.`);
 	return true;
 }
 
