@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from 'src/App.tsx';
-import 'src/styles/reset.scss';
-import 'src/styles/main.scss';
+import 'src/styles/reset.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
