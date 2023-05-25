@@ -26,7 +26,7 @@ async function promptForMissingOptions(options) {
 			type: 'list',
 			name: 'template',
 			message: 'Please choose which porject template to use',
-			choices: ['JavaScript Vanilla', 'React + TS', 'TypeScript Vanilla'],
+			choices: Array.from(templatesDic.keys()),
 			default: 'JavaScript',
 		});
 	}
