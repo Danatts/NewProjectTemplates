@@ -1,7 +1,7 @@
 const templatesDic = new Map();
 
-templatesDic.set('JavaScript Vanilla','javascript');
+templatesDic.set('JavaScript Library','jslib');
 templatesDic.set('React + TS','tsreact');
-templatesDic.set('TypeScript Vanilla','typescript');
+templatesDic.set('TypeScript Library','tslib');
 
 export default templatesDic;
