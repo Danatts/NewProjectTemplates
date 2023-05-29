@@ -10,5 +10,5 @@ made by [Domink Kundel](https://github.com/dkundel).
 | Template | Command | Stack |
 | - | - | - |
 | JavaScript Library | `jslib` | JavaScript + Parcel |
-| React + TS | `tsreact` | React + TypeScript + Vite |
 | TypeScript Library | `tslib` | TypeScript + Parcel |
+| React + TS | `tsreact` | React + TypeScript + Vite |
