@@ -11,4 +11,4 @@ made by [Domink Kundel](https://github.com/dkundel).
 | - | - | - |
 | JavaScript Library | `jslib` | JavaScript + Parcel |
 | TypeScript Library | `tslib` | TypeScript + Parcel |
-| React + TS | `tsreact` | React + TypeScript + Vite |
+| React + TS | `tsreact` | React + TypeScript + Vite + Tailwind |
