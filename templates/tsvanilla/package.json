@@ -1,0 +1,23 @@
+{
+	"name": "typescript",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon",
+		"build": "tsc",
+		"lint": "eslint src --ext ts --fix"
+	},
+	"keywords": [],
+	"author": "Daniel Arteta",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^18.15.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "eslint": "^8.41.0",
+		"nodemon": "^2.0.21",
+		"ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+	}
+}

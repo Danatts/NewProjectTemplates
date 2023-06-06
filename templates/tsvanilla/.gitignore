@@ -2,6 +2,4 @@
 node_modules
 
 # Build
-dist
-.parcel-cache
-.cache
+build
