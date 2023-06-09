@@ -1,5 +1,5 @@
 {
-	"name": "projectName",
+	"name": "tsreact",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint src --ext ts,tsx --fix",
-		"chec": "tsc --noEmit",
+		"check": "tsc --noEmit",
 		"preview": "vite preview"
 	},
 	"dependencies": {

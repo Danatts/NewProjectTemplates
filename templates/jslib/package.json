@@ -1,19 +1,21 @@
 {
-	"name": "javascript",
+	"name": "jslib",
 	"version": "1.0.0",
 	"description": "",
-	"type": "module",
 	"source": "src/index.js",
 	"main": "dist/index.js",
 	"scripts": {
-		"dev": "parcel watch",
-		"build": "parcel build",
-		"lint": "eslint src --fix"
+		"dev": "npm run serve & npm run watch",
+    "build": "parcel build",
+    "lint": "eslint src --ext ts,js --fix",
+		"serve": "nodemon dist/index.js",
+    "watch": "parcel watch"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"eslint": "^8.41.0",
-		"parcel": "^2.9.1"
+    "eslint": "^8.42.0",
+    "nodemon": "^2.0.22",
+    "parcel": "^2.9.2"
 	}
 }
